@@ -3,12 +3,15 @@ const { _9, _121665, gf, inv25519, pack25519, unpack25519, sel25519, A, M, Z, S 
 
 const crypto_scalarmult_BYTES = 32
 const crypto_scalarmult_SCALARBYTES = 32
+const crypto_scalarmult_SCALARBYTES = 32
+const crypto_scalarmult_ed25519_BYTES = 32
 
 module.exports = {
   crypto_scalarmult,
   crypto_scalarmult_base,
   crypto_scalarmult_BYTES,
-  crypto_scalarmult_SCALARBYTES
+  crypto_scalarmult_SCALARBYTES,
+  crypto_scalarmult_ed25519_BYTES
 }
 
 function crypto_scalarmult (q, n, p) {
