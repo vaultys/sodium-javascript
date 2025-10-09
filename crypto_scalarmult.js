@@ -23,6 +23,8 @@ function crypto_scalarmult_ed25519_noclamp (q, n, p) {
   var a = gf(), b = gf(), c = gf(),
     d = gf(), e = gf(), f = gf()
   for (i = 0; i < 31; i++) z[i] = n[i]
+  // no clamp src: https://github.com/jedisct1/libsodium/blob/589d67b8396abebfcf3fc7a754c6797a9e93b8b4/src/libsodium/crypto_scalarmult/ed25519/ref10/scalarmult_ed25519_ref10.c#L49
+  z[31] = n[31] & 127;
   // z[31] = (n[31] & 127) | 64
   // z[0] &= 248
   unpack25519(x, p)
